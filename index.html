@@ -3,14 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculadora</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link rel="stylesheet" href="css/styles.css">
+    <title>Calculadora</title>
 </head>
 <body>
 
     <div class="calc-container">
         <h1 class="title">Calculadora con JavaScript</h1>
         <div class="calc">
+            <div class="calc-icons">
+                <span class="hours">14:20 p. m.</span>
+
+                <div class="icons-right">
+                    <i class="fas fa-bell"></i>
+                    <i class="fas fa-signal"></i>
+                    <i class="fas fa-wifi"></i>
+                    <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+
+            <div class="change-theme">
+                <div class="switch-container">
+                    <label class="switch">
+                        <input 
+                            type="checkbox"
+                            class="switch-input"
+                        />
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+            </div>
             <input 
                 type="text" 
                 class="calc-input"
@@ -37,9 +60,9 @@
                 </div>
 
                 <div class="calc-operations" id="calc-operations">
-                    <button class="calc-operation">&divide;</i></button>
+                    <button class="calc-operation">/</i></button>
                     <button class="calc-operation">del</button>
-                    <button class="calc-operation">&times;</button>
+                    <button class="calc-operation">x</button>
                     <button class="calc-operation">-</button>
                     <button class="calc-operation">+</button>
                     <button class="calc-operation">&#61</button>
