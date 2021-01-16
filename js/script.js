@@ -1,5 +1,6 @@
 const screen = document.getElementById('calc-input');
 const buttons = document.getElementById('calc-buttons');
+const switchButton = document.getElementById('switch-input');
 let result = 0;
 let operationNumbers = [];
 
@@ -60,6 +61,18 @@ const Operations = ( operation ) => {
     screen.value = result;
 }
 
+// Función que cambia el tema
+const toggleTheme = () => {
+    if( switchButton.checked ){
+        localStorage.setItem('theme', "dark");
+
+    }else{
+        localStorage.setItem("theme", "light");
+    }
+
+    document.getElementsByTagName("HTML")[0].setAttribute("data-theme", localStorage.getItem('theme') );
+}
+
 // EventListeners
 buttons.addEventListener('click', e => {
 
@@ -76,6 +89,8 @@ buttons.addEventListener('click', e => {
     }
 });
 
+switchButton.addEventListener('click', toggleTheme );
+
 
 document.addEventListener('keydown', e => {
 
@@ -83,4 +98,9 @@ document.addEventListener('keydown', e => {
 
     if( e.key === 'Enter' ) Operations(screen.value);
     if( e.key === 'Backspace' ) Delete();
-})
+});
+
+// Pone el switch button en true o false dependiendo del tema
+switchButton.checked = ( localStorage.getItem('theme') === 'light' ? false : true );
+// Obtiene el tema del localStorage al cargar la página
+document.getElementsByTagName("HTML")[0].setAttribute("data-theme", localStorage.getItem('theme') );
