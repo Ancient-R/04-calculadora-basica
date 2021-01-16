@@ -1,6 +1,8 @@
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #F7F3F2;
 }
+
 /* TÍTUTLO */
 .title{
     text-align: center;
@@ -10,6 +12,86 @@ body{
 /* CONTENEDOR DE LA CALCULADORA */
 .calc-container{
     margin-top: 2rem;
+}
+
+.calc-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+.hours{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.icons-right{
+    color: #3d3d3d;
+}
+
+/* ESTILOS PARA EL BOTÓN MODO OSCURO */
+.switch{
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 35px;
+    margin-right: 20px;
+    outline: none;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Hide default HTML checkbox */
+.switch-input{
+    display: none;
+}
+  
+  /* The slider */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f9f9f9;
+    transition: .4s;
+}
+  
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 29px;
+    width: 31px;
+    left: 4px;
+    bottom: 3px;
+    transition: .4s;
+}
+
+.switch-input:checked + .slider {
+    background-color: #f9f9f9;
+}
+
+.switch-input:focus + .slider {
+  box-shadow: 0 0 1px #fff;
+}
+
+.switch-input:checked + .slider::before {
+    transform: translateX(46px);
+    background-image: url(../assets/icons/moon.svg);
+}
+  
+.round{
+    border-radius: 34px;
+}
+  
+.round::before {
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: url(../assets/icons/sun.svg);
 }
 
 .calc,
@@ -24,24 +106,34 @@ body{
     flex-direction: column;
     justify-content: space-between;
     width: 300px;
-    height: 350px;
-    border: 1px solid blue;
+    height: 580px;
     margin-left: auto;
     margin-right: auto;
+    background-color: #fff;
+    border-radius: 20px;
 }
 
 /* PANTALLA */
 .calc-input{
-    height: 40px;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    height: 60px;
+    border: none;
+    background-color: #fff;
     text-align: right;
     font-size: 22px;
     padding: 10px;
+    margin-top: 16px;
+    margin-bottom: 16px;
 }
 
 /* BOTONES DE NÚMEROS Y OPERACIONES */
+.calc-buttons{
+    background-color: #f9f9f9;
+    height: 320px;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
 .calc-numbers,
 .calc-operations{
     flex-wrap: wrap;
@@ -54,11 +146,11 @@ body{
     border: none;
     outline: none;
     padding: 1.2rem;
+    background-color: transparent;
 }
 
 .calc-number{
     width: 33.3%;
-    background-color: #fff;
 }
 
 .calc-operation{
