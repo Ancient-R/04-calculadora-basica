@@ -1,6 +1,30 @@
+*{
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* VARIABLES DE COLOR PARA TEMA LIGHT */
+html{
+    --primarycolor: #F7F3F2;
+    --secondarycolor: #F9F9F9;
+    --colorfont: #111;
+    --bgcolor: #fff;
+    --iconscolor: #3d3d3d;
+}
+
+/* VARIABLES DE COLOR PARA EL TEMA DARK */
+html[data-theme="dark"]{
+    --primarycolor: #181B28;
+    --secondarycolor: #282C35;
+    --colorfont: #FFF;
+    --bgcolor: #21252E;
+    --iconscolor: #7e7e7e;
+}
+
 body{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    background-color: #F7F3F2;
+    background-color: var(--primarycolor);
+    color: var(--colorfont);
+    transition: background-color 1s ease;
 }
 
 /* TÍTUTLO */
@@ -20,15 +44,12 @@ body{
     align-items: center;
     padding: 20px;
     font-size: 14px;
+    color: var(--iconscolor);
 }
 
 .hours{
     font-weight: bold;
     font-size: 14px;
-}
-
-.icons-right{
-    color: #3d3d3d;
 }
 
 /* ESTILOS PARA EL BOTÓN MODO OSCURO */
@@ -57,7 +78,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #f9f9f9;
+    background-color: var(--secondarycolor);
     transition: .4s;
 }
   
@@ -72,11 +93,7 @@ body{
 }
 
 .switch-input:checked + .slider {
-    background-color: #f9f9f9;
-}
-
-.switch-input:focus + .slider {
-  box-shadow: 0 0 1px #fff;
+    background-color: var(--secondarycolor);
 }
 
 .switch-input:checked + .slider::before {
@@ -109,15 +126,17 @@ body{
     height: 580px;
     margin-left: auto;
     margin-right: auto;
-    background-color: #fff;
     border-radius: 20px;
+    background-color: var(--bgcolor);
+    transition: background-color 1s ease;
+    box-shadow: 0px 7px 15px 1px #000;
 }
 
 /* PANTALLA */
 .calc-input{
     height: 60px;
     border: none;
-    background-color: #fff;
+    background-color: transparent;
     text-align: right;
     font-size: 22px;
     padding: 10px;
@@ -127,7 +146,7 @@ body{
 
 /* BOTONES DE NÚMEROS Y OPERACIONES */
 .calc-buttons{
-    background-color: #f9f9f9;
+    background-color: var(--secondarycolor);
     height: 320px;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
@@ -141,6 +160,7 @@ body{
 
 .calc-number,
 .calc-operation{
+    color: var(--colorfont);
     font-weight: lighter;
     font-size: 1.2rem;
     border: none;
